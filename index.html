@@ -3,146 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prebet Daniel | Motion Experience</title>
+    <title>Prebet Daniel | Premium Student Ride</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="background-anim">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
     </div>
 
-    <div class="reveal-loader">
-        <h1 class="loader-text">PREBET DANIEL</h1>
+    <div class="loader-container">
+        <div class="loader-content">
+            <span class="loader-spinner"></span>
+            <h3>Prebet Daniel</h3>
+        </div>
     </div>
 
-    <nav class="glass-nav slide-down">
-        <div class="logo">PD.</div>
-        <div class="nav-status">
-            <span class="pulse-dot"></span> Online
+    <nav class="navbar glass">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo">
+                <div class="logo-box"><i class="fas fa-car-side"></i></div>
+                <span>Prebet Daniel</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Utama</a></li>
+                <li><a href="#features">Kelebihan</a></li>
+                <li><a href="#pricing">Harga</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="#booking" class="btn btn-sm btn-primary">Tempah</a>
+                <button class="mobile-toggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <main class="container">
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu glass">
+        <div class="menu-header">
+            <span>Menu</span>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-links">
+            <li><a href="#home">Utama</a></li>
+            <li><a href="#features">Kelebihan</a></li>
+            <li><a href="#pricing">Senarai Harga</a></li>
+            <li><a href="#booking">Tempah Sekarang</a></li>
+        </ul>
+        <div class="menu-footer">
+            <p>Prebet Daniel System v2.2 (Glass)</p>
+        </div>
+    </div>
+
+    <main class="container main-grid" id="home">
         
-        <section class="hero-section">
-            <div class="hero-content scroll-element fade-up">
-                <span class="tag">UPSI STUDENT RIDE</span>
-                <h1>Gerak. <br>Pantas. <br>Selesa.</h1>
-                <p>Servis pengangkutan premium pelajar UPSI dengan pengalaman tempahan yang lancar.</p>
+        <section class="content-column">
+            
+            <div class="card hero-card glass scroll-anim">
+                <div class="badge"><i class="fas fa-check-circle"></i> Edisi Pelajar UPSI</div>
+                <h1>Ride Selesa,<br><span class="text-gradient">Harga Siswa.</span></h1>
+                <p class="subtitle">Servis pengangkutan premium di Tanjong Malim. Kereta bersih, pemandu mesra, dan perjalanan selamat.</p>
                 
-                <div class="hero-stats">
-                    <div class="stat-bubble float-delay-1">
-                        <b>4.9</b> ⭐
+                <div class="stats-row">
+                    <div class="stat">
+                        <strong>4.9 <i class="fas fa-star text-yellow"></i></strong>
+                        <span>Rating</span>
                     </div>
-                    <div class="stat-bubble float-delay-2">
-                        <b>500+</b> Trip
+                    <div class="stat">
+                        <strong>500+</strong>
+                        <span>Trip</span>
                     </div>
-                    <div class="stat-bubble float-delay-3">
-                        <b>PMV</b> 1214
+                    <div class="stat">
+                        <strong>PMV 1214</strong>
+                        <span>Bezza Putih</span>
                     </div>
                 </div>
             </div>
+
+            <div id="features" class="features-row">
+                <div class="card feature-box glass scroll-anim delay-1">
+                    <div class="icon-circle icon-blue"><i class="fas fa-snowflake"></i></div>
+                    <h4>Aircond Sejuk</h4>
+                    <p>Keselesaan optimum.</p>
+                </div>
+                <div class="card feature-box glass scroll-anim delay-2">
+                    <div class="icon-circle icon-purple"><i class="fab fa-spotify"></i></div>
+                    <h4>Spotify On</h4>
+                    <p>Request lagu anda.</p>
+                </div>
+                <div class="card feature-box glass scroll-anim delay-3">
+                    <div class="icon-circle icon-green"><i class="fas fa-clock"></i></div>
+                    <h4>On Time</h4>
+                    <p>Tepati masa kuliah.</p>
+                </div>
+            </div>
+
+            <div id="pricing" class="card pricing-card glass scroll-anim">
+                <div class="card-header">
+                    <h3>Anggaran Tambang</h3>
+                    <p>Kadar mesra pelajar mengikut kawasan.</p>
+                </div>
+                <ul class="price-list">
+                    <li>
+                        <div class="p-icon"><i class="fas fa-university"></i></div>
+                        <span>Dalam Kampus (KSAS/KSAJS)</span>
+                        <strong>RM 3 - 5</strong>
+                    </li>
+                    <li>
+                        <div class="p-icon"><i class="fas fa-train"></i></div>
+                        <span>KTM Tanjong Malim</span>
+                        <strong>RM 5 / 6 / 10</strong>
+                    </li>
+                    <li>
+                        <div class="p-icon"><i class="fas fa-store"></i></div>
+                        <span>Taman U / Speedmart</span>
+                        <strong>RM 5 / 6 / 10</strong>
+                    </li>
+                </ul>
+                <div class="alert-box">
+                    <i class="fas fa-info-circle"></i> Auto-Booking khas untuk pengguna Android.
+                </div>
+            </div>
+
         </section>
 
-        <section class="booking-section scroll-element zoom-in">
-            <div class="glass-card">
-                <div class="card-header">
-                    <h2>Tempah Sekarang</h2>
-                    <p>Isi butiran untuk WhatsApp Daniel.</p>
+        <aside class="booking-column" id="booking">
+            <div class="card booking-card glass sticky-card">
+                <div class="booking-header">
+                    <h2>Tempah Ride</h2>
+                    <div class="status-dot online">
+                        <span class="ping"></span>
+                        Online
+                    </div>
                 </div>
 
                 <form id="bookingForm">
-                    <div class="input-anim-group">
-                        <input type="text" id="pickup" required placeholder=" ">
-                        <label>Lokasi Ambil (Pickup)</label>
-                        <i class="fas fa-map-marker-alt icon"></i>
+                    <div class="form-group">
+                        <label>Lokasi Ambil</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="pickup" placeholder="Cth: Blok B, KTDI" required>
+                        </div>
                     </div>
 
-                    <div class="input-anim-group">
-                        <select id="destination" required>
-                            <option value="" disabled selected></option>
-                            <option value="Kampus Proton (KSAS)">Kampus Proton (KSAS)</option>
-                            <option value="Kampus Lama (KSAJS)">Kampus Lama (KSAJS)</option>
-                            <option value="KTM Tanjong Malim">KTM Station</option>
-                            <option value="Taman U / Ujana">Taman U / Ujana</option>
-                            <option value="Speedmart">Speedmart</option>
-                        </select>
+                    <div class="form-group">
                         <label>Destinasi</label>
-                        <i class="fas fa-location-arrow icon"></i>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-anim-group">
-                            <input type="time" id="time" required>
-                            <label class="fixed-label">Masa</label>
-                        </div>
-                        <div class="input-anim-group">
-                            <select id="pax">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                        <div class="input-wrapper">
+                            <i class="fas fa-location-arrow"></i>
+                            <select id="destination" required>
+                                <option value="" disabled selected>Pilih lokasi...</option>
+                                <option value="Kampus Proton (KSAS)">Kampus Proton (KSAS)</option>
+                                <option value="Kampus Lama (KSAJS)">Kampus Lama (KSAJS)</option>
+                                <option value="KTM Tanjong Malim">KTM Tanjong Malim</option>
+                                <option value="Taman U / Ujana">Taman U / Ujana</option>
+                                <option value="Speedmart / Kedai Makan">Speedmart / Kedai Makan</option>
+                                <option value="Lain-lain">Lain-lain (Nyatakan di WhatsApp)</option>
                             </select>
-                            <label class="fixed-label">Pax</label>
                         </div>
                     </div>
 
-                    <button type="submit" class="cta-button">
-                        <span class="btn-text">Hantar WhatsApp</span>
-                        <span class="btn-shine"></span>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Masa</label>
+                            <input type="time" id="time" class="input-simple" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Pax</label>
+                            <select id="pax" class="input-simple">
+                                <option value="1 Orang">1</option>
+                                <option value="2 Orang">2</option>
+                                <option value="3 Orang">3</option>
+                                <option value="4 Orang">4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-full btn-primary btn-shadow">
+                        <span class="btn-text">Hantar ke WhatsApp</span>
+                        <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
                     </button>
                     
-                    <div class="device-note">
-                        <span class="android"><i class="fab fa-android"></i> Auto-Send</span>
-                        <span class="ios"><i class="fab fa-apple"></i> Manual</span>
+                    <div class="os-detect">
+                        <span class="android-active"><i class="fab fa-android"></i> Android: Auto</span>
+                        <span class="ios-active"><i class="fab fa-apple"></i> iOS: Manual</span>
                     </div>
                 </form>
-            </div>
-        </section>
 
-        <section class="pricing-section">
-            <h3 class="scroll-element fade-up">Kadar Tambang</h3>
-            <div class="cards-grid">
-                <div class="price-card scroll-element slide-left">
-                    <div class="price-icon">🎓</div>
-                    <h4>Kampus</h4>
-                    <h2>RM 3-5</h2>
-                    <p>KSAS / KSAJS</p>
-                </div>
-                <div class="price-card scroll-element fade-up">
-                    <div class="price-icon">🚂</div>
-                    <h4>KTM</h4>
-                    <h2>RM 5/6/10</h2>
-                    <p>Stesen Tg. Malim</p>
-                </div>
-                <div class="price-card scroll-element slide-right">
-                    <div class="price-icon">🏘️</div>
-                    <h4>Luar</h4>
-                    <h2>RM 5/6/10</h2>
-                    <p>Taman U / Speedmart</p>
+                <div class="driver-profile">
+                    <div class="avatar">D</div>
+                    <div class="info">
+                        <strong>Daniel</strong>
+                        <small>Perodua Bezza (Putih)</small>
+                    </div>
+                    <a href="https://wa.me/60189490784" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-        </section>
+        </aside>
 
     </main>
 
-    <footer class="scroll-element fade-up">
-        <p>Prebet Daniel • 2025</p>
+    <footer class="glass">
+        <p>&copy; 2025 Prebet Daniel System. <br>Designed for UPSI Students.</p>
     </footer>
 
-    <div id="iosModal" class="modal-backdrop">
-        <div class="modal-popup">
-            <div class="modal-icon">⚠️</div>
+    <div id="ios-modal" class="modal glass-modal">
+        <div class="modal-content">
+            <div class="icon-warning"><i class="fab fa-apple"></i></div>
             <h3>Pengguna iOS</h3>
             <p>Sistem sekuriti Apple menghalang auto-link. Sila tekan butang di bawah untuk chat manual.</p>
-            <a href="https://wa.me/60189490784" class="modal-btn">Chat Manual</a>
-            <button onclick="closeModal()" class="close-btn">Tutup</button>
+            
+            <a href="https://wa.me/60189490784" class="btn btn-full btn-primary" style="margin-top: 20px;">
+                Chat Manual (WhatsApp)
+            </a>
+            <button class="btn-text" onclick="closeModal()">Tutup</button>
         </div>
     </div>
 
