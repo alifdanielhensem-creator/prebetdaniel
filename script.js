@@ -1,24 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // 1. SCROLL ANIMATION (REVEAL)
-    // Ini akan buat element muncul bila kita scroll ke bawah
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-        });
-    });
-
-    const hiddenElements = document.querySelectorAll('.scroll-anim');
-    hiddenElements.forEach((el) => observer.observe(el));
-
-    // 2. LOADER
+    
+    // 1. Loading Screen Logic
+    const loader = document.querySelector('.loader-container');
     setTimeout(() => {
-        document.querySelector('.loader-container').classList.add('loader-hide');
-    }, 1200);
+        loader.classList.add('loader-hide');
+    }, 1500);
 
-    // 3. MENU MOBILE
+    // 2. Mobile Menu Logic
     const mobileBtn = document.querySelector('.mobile-toggle');
     const closeBtn = document.querySelector('.close-menu');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -33,65 +21,86 @@ document.addEventListener('DOMContentLoaded', () => {
     if(mobileBtn) mobileBtn.addEventListener('click', toggleMenu);
     if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
     if(overlay) overlay.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+    
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
 
-    // 4. LOGIK iOS & WHATSAPP
+    // 3. FUNGSI PENGESAN IOS (IPHONE/IPAD)
     function isIOS() {
         return /iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
+
+    // Modal Variables
     const iosModal = document.getElementById('ios-modal');
     window.closeModal = function() {
         iosModal.classList.remove('active');
     }
 
+    // 4. LOGIK TEMPAHAN
     const form = document.getElementById('bookingForm');
+    
     if(form) {
         const submitBtn = form.querySelector('button[type="submit"]');
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Cek iOS
+            // A. CEK JIKA PENGGUNA ADALAH IOS
             if (isIOS()) {
+                // Jika iPhone, JANGAN auto redirect. Tunjuk Modal Warning/Sorry
                 iosModal.classList.add('active');
-                return;
+                return; // Berhenti di sini
             }
 
-            // Android Logic
+            // B. JIKA ANDROID / PC - TERUSKAN AUTO BOOKING
             const pickup = document.getElementById('pickup').value;
-            const dest = document.getElementById('destination').value;
+            const destination = document.getElementById('destination').value;
             const time = document.getElementById('time').value;
             const pax = document.getElementById('pax').value;
 
-            // Loading Effect
-            const originalHTML = submitBtn.innerHTML;
+            // Ubah Button Text
+            const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
             submitBtn.style.opacity = '0.8';
 
             setTimeout(() => {
-                const phone = '60189490784';
-                const msg = `Salam Daniel, pengguna Android nak tempah:\n\n📍 Lokasi: ${pickup}\n🏁 Destinasi: ${dest}\n🕒 Masa: ${time}\n👥 Pax: ${pax}\n\nAvailable tak?`;
-                
-                window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+                const phoneNumber = '60189490784'; 
+                const message = `Salam Daniel, saya pengguna Android nak book ride:
 
-                submitBtn.innerHTML = originalHTML;
+📍 *Lokasi Ambil:* ${pickup}
+🏁 *Destinasi:* ${destination}
+🕒 *Masa:* ${time}
+👥 *Pax:* ${pax}
+
+Available tak?`;
+
+                const encodedMessage = encodeURIComponent(message);
+                const waUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                window.open(waUrl, '_blank');
+
+                submitBtn.innerHTML = originalText;
                 submitBtn.style.opacity = '1';
                 form.reset();
             }, 1000);
         });
     }
 
-    // 5. NAVBAR ACTIVE STATE
+    // 5. Smooth Scroll
+    const sections = document.querySelectorAll('section, aside, div[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
     window.addEventListener('scroll', () => {
         let current = '';
-        const sections = document.querySelectorAll('section, aside, div[id]');
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            if (scrollY >= (sectionTop - 150)) {
+            if (scrollY >= (sectionTop - 200)) {
                 current = section.getAttribute('id');
             }
         });
-        document.querySelectorAll('.nav-links a').forEach(link => {
+
+        navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href').includes(current)) {
                 link.classList.add('active');
