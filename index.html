@@ -32,7 +32,7 @@
             </ul>
 
             <div class="nav-right">
-                <a href="#booking" class="btn btn-sm btn-primary">Tempah</a>
+                <a href="#booking" class="btn btn-sm btn-primary">Tempah Sekarang</a>
                 <button class="mobile-toggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -132,7 +132,7 @@
                         <label>Lokasi Ambil</label>
                         <div class="input-wrapper">
                             <i class="fas fa-location-crosshairs"></i>
-                            <input type="text" placeholder="Cth: Blok B, KTDI" required>
+                            <input type="text" id="pickup" placeholder="Cth: Blok B, KTDI" required>
                         </div>
                     </div>
 
@@ -140,12 +140,14 @@
                         <label>Destinasi</label>
                         <div class="input-wrapper">
                             <i class="fas fa-flag-checkered"></i>
-                            <select required>
+                            <select id="destination" required>
                                 <option value="" disabled selected>Pilih lokasi...</option>
-                                <option>Kampus Sultan Azlan Shah (Proton)</option>
-                                <option>Kampus Sultan Abdul Jalil (Lama)</option>
-                                <option>KTM Station</option>
-                                <option>Speedmart / Kedai Makan</option>
+                                <option value="Kampus Proton (KSAS)">Kampus Proton (KSAS)</option>
+                                <option value="Kampus Lama (KSAJS)">Kampus Lama (KSAJS)</option>
+                                <option value="KTM Tanjong Malim">KTM Tanjong Malim</option>
+                                <option value="Taman U / Ujana">Taman U / Ujana</option>
+                                <option value="Speedmart / Kedai Makan">Speedmart / Kedai Makan</option>
+                                <option value="Lain-lain">Lain-lain (Nyatakan di WhatsApp)</option>
                             </select>
                         </div>
                     </div>
@@ -153,21 +155,21 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label>Masa</label>
-                            <input type="time" class="input-simple" required>
+                            <input type="time" id="time" class="input-simple" required>
                         </div>
                         <div class="form-group">
                             <label>Pax</label>
-                            <select class="input-simple">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                            <select id="pax" class="input-simple">
+                                <option value="1 Orang">1</option>
+                                <option value="2 Orang">2</option>
+                                <option value="3 Orang">3</option>
+                                <option value="4 Orang">4</option>
                             </select>
                         </div>
                     </div>
 
                     <button type="submit" class="btn btn-full btn-primary btn-shadow">
-                        Hantar Tempahan <i class="fas fa-paper-plane"></i>
+                        Hantar ke WhatsApp <i class="fab fa-whatsapp"></i>
                     </button>
                 </form>
 
@@ -177,7 +179,7 @@
                         <strong>Daniel</strong>
                         <small>Perodua Bezza (Putih)</small>
                     </div>
-                    <a href="#" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/60189490784" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </aside>
@@ -187,15 +189,6 @@
     <footer>
         <p>&copy; 2025 Prebet Daniel System. <br>Design for UPSI Students.</p>
     </footer>
-
-    <div id="modal-success" class="modal">
-        <div class="modal-content">
-            <div class="modal-icon"><i class="fas fa-check"></i></div>
-            <h3>Permintaan Dihantar!</h3>
-            <p>Daniel akan WhatsApp anda sebentar lagi untuk pengesahan.</p>
-            <button class="btn btn-primary" onclick="closeModal()">OK, Terima Kasih</button>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
