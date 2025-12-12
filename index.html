@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prebet Daniel | UPSI E-Hailing</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="loader-container">
+        <div class="loader-content">
+            <span class="loader-spinner"></span>
+            <h3>Prebet Daniel</h3>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo">
+                <div class="logo-box"><i class="fas fa-car-alt"></i></div>
+                <span>Prebet Daniel</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Utama</a></li>
+                <li><a href="#features">Kelebihan</a></li>
+                <li><a href="#pricing">Harga</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="#booking" class="btn btn-sm btn-primary">Tempah</a>
+                <button class="mobile-toggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <div class="menu-header">
+            <span>Menu</span>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-links">
+            <li><a href="#home">Utama</a></li>
+            <li><a href="#features">Kelebihan</a></li>
+            <li><a href="#pricing">Senarai Harga</a></li>
+            <li><a href="#booking">Tempah Sekarang</a></li>
+        </ul>
+    </div>
+
+    <main class="container main-grid" id="home">
+        
+        <section class="content-column">
+            
+            <div class="card hero-card fade-in">
+                <div class="badge">Edisi Pelajar UPSI</div>
+                <h1>Ride Selesa, <br><span class="text-highlight">Harga Siswa.</span></h1>
+                <p class="subtitle">Servis pengangkutan peribadi (Prebet) yang dipercayai di Tanjong Malim. Selamat, pantas, dan berhawa dingin.</p>
+                
+                <div class="stats-row">
+                    <div class="stat">
+                        <strong>4.9/5.0</strong>
+                        <span>Rating</span>
+                    </div>
+                    <div class="stat">
+                        <strong>500+</strong>
+                        <span>Trip</span>
+                    </div>
+                    <div class="stat">
+                        <strong>PMV 1214</strong>
+                        <span>Plat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="features" class="features-row fade-in delay-1">
+                <div class="card feature-box">
+                    <i class="fas fa-wind icon-blue"></i>
+                    <h4>Aircond Sejuk</h4>
+                    <p>Keselesaan optimum.</p>
+                </div>
+                <div class="card feature-box">
+                    <i class="fas fa-music icon-purple"></i>
+                    <h4>Spotify On</h4>
+                    <p>Request lagu anda.</p>
+                </div>
+                <div class="card feature-box">
+                    <i class="fas fa-clock icon-green"></i>
+                    <h4>On Time</h4>
+                    <p>Tepati masa kuliah.</p>
+                </div>
+            </div>
+
+            <div id="pricing" class="card pricing-card fade-in delay-2">
+                <div class="card-header">
+                    <h3>Anggaran Tambang</h3>
+                    <p>Bayar tunai atau QR Pay.</p>
+                </div>
+                <ul class="price-list">
+                    <li>
+                        <span><i class="fas fa-map-pin"></i> Dalam Kampus (KSAS/KSAJS)</span>
+                        <strong>RM 3 - 5</strong>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-train"></i> KTM Tanjong Malim</span>
+                        <strong>RM 6</strong>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-city"></i> Taman U / Pekan</span>
+                        <strong>RM 7</strong>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+        <aside class="booking-column" id="booking">
+            <div class="card booking-card">
+                <div class="booking-header">
+                    <h2>Tempah Ride</h2>
+                    <div class="status-dot online">Online</div>
+                </div>
+
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label>Lokasi Ambil</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-location-crosshairs"></i>
+                            <input type="text" placeholder="Cth: Blok B, KTDI" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Destinasi</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-flag-checkered"></i>
+                            <select required>
+                                <option value="" disabled selected>Pilih lokasi...</option>
+                                <option>Kampus Sultan Azlan Shah (Proton)</option>
+                                <option>Kampus Sultan Abdul Jalil (Lama)</option>
+                                <option>KTM Station</option>
+                                <option>Speedmart / Kedai Makan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Masa</label>
+                            <input type="time" class="input-simple" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Pax</label>
+                            <select class="input-simple">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-full btn-primary btn-shadow">
+                        Hantar Tempahan <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+
+                <div class="driver-profile">
+                    <div class="avatar">D</div>
+                    <div class="info">
+                        <strong>Daniel</strong>
+                        <small>Perodua Bezza (Putih)</small>
+                    </div>
+                    <a href="#" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Prebet Daniel System. <br>Design for UPSI Students.</p>
+    </footer>
+
+    <div id="modal-success" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon"><i class="fas fa-check"></i></div>
+            <h3>Permintaan Dihantar!</h3>
+            <p>Daniel akan WhatsApp anda sebentar lagi untuk pengesahan.</p>
+            <button class="btn btn-primary" onclick="closeModal()">OK, Terima Kasih</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
