@@ -27,35 +27,54 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', toggleMenu);
     });
 
-    // 3. Modal Success Logic
+    // 3. WHATSAPP BOOKING LOGIC (UPDATE TERBARU)
     const form = document.getElementById('bookingForm');
     const submitBtn = form.querySelector('button[type="submit"]');
-    const modal = document.getElementById('modal-success');
 
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // UI Loading State
+        e.preventDefault(); // Halang form dari refresh page
+
+        // A. Ambil Data dari Input
+        const pickup = document.getElementById('pickup').value;
+        const destination = document.getElementById('destination').value;
+        const time = document.getElementById('time').value;
+        const pax = document.getElementById('pax').value;
+
+        // B. Ubah butang jadi loading
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
         submitBtn.style.opacity = '0.7';
 
-        // Simulate sending (1.5 seconds)
+        // C. Proses Data
         setTimeout(() => {
-            // Reset button
+            
+            // Nombor Driver
+            const phoneNumber = '60189490784'; 
+
+            // Susun Ayat Mesej
+            const message = `Salam Daniel, saya nak book ride:
+
+📍 *Lokasi Ambil:* ${pickup}
+🏁 *Destinasi:* ${destination}
+🕒 *Masa:* ${time}
+👥 *Pax:* ${pax}
+
+Available tak?`;
+
+            // Encode untuk URL
+            const encodedMessage = encodeURIComponent(message);
+            const waUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            // Buka WhatsApp
+            window.open(waUrl, '_blank');
+
+            // Reset Form & Butang
             submitBtn.innerHTML = originalText;
             submitBtn.style.opacity = '1';
-            
-            // Show Modal
-            modal.classList.add('active');
             form.reset();
-        }, 1500);
-    });
 
-    // Function to close modal (called by onclick in HTML)
-    window.closeModal = function() {
-        modal.classList.remove('active');
-    }
+        }, 1000); // Delay 1 saat untuk effect 'loading'
+    });
 
     // 4. Smooth Scroll & Active Navbar State
     const sections = document.querySelectorAll('section, aside, div[id]');
