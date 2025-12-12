@@ -3,19 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prebet Daniel | Premium Student Ride</title>
+    <title>Prebet Daniel | UPSI Student Ride</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="bg-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
 
     <div class="loader-container">
         <div class="loader-content">
@@ -24,7 +18,7 @@
         </div>
     </div>
 
-    <nav class="navbar glass">
+    <nav class="navbar">
         <div class="container nav-wrapper">
             <a href="#" class="brand-logo">
                 <div class="logo-box"><i class="fas fa-car-side"></i></div>
@@ -47,7 +41,7 @@
     </nav>
 
     <div class="mobile-menu-overlay"></div>
-    <div class="mobile-menu glass">
+    <div class="mobile-menu">
         <div class="menu-header">
             <span>Menu</span>
             <button class="close-menu"><i class="fas fa-times"></i></button>
@@ -59,7 +53,7 @@
             <li><a href="#booking">Tempah Sekarang</a></li>
         </ul>
         <div class="menu-footer">
-            <p>Prebet Daniel System v2.2 (Glass)</p>
+            <p>Prebet Daniel System v2.1</p>
         </div>
     </div>
 
@@ -67,10 +61,10 @@
         
         <section class="content-column">
             
-            <div class="card hero-card glass scroll-anim">
+            <div class="card hero-card fade-in">
                 <div class="badge"><i class="fas fa-check-circle"></i> Edisi Pelajar UPSI</div>
-                <h1>Ride Selesa,<br><span class="text-gradient">Harga Siswa.</span></h1>
-                <p class="subtitle">Servis pengangkutan premium di Tanjong Malim. Kereta bersih, pemandu mesra, dan perjalanan selamat.</p>
+                <h1>Ride Selesa, <br><span class="text-highlight">Harga Siswa.</span></h1>
+                <p class="subtitle">Servis pengangkutan peribadi yang dipercayai di Tanjong Malim. Selamat, pantas, dan berhawa dingin.</p>
                 
                 <div class="stats-row">
                     <div class="stat">
@@ -88,61 +82,55 @@
                 </div>
             </div>
 
-            <div id="features" class="features-row">
-                <div class="card feature-box glass scroll-anim delay-1">
+            <div id="features" class="features-row fade-in delay-1">
+                <div class="card feature-box">
                     <div class="icon-circle icon-blue"><i class="fas fa-snowflake"></i></div>
                     <h4>Aircond Sejuk</h4>
                     <p>Keselesaan optimum.</p>
                 </div>
-                <div class="card feature-box glass scroll-anim delay-2">
+                <div class="card feature-box">
                     <div class="icon-circle icon-purple"><i class="fab fa-spotify"></i></div>
                     <h4>Spotify On</h4>
                     <p>Request lagu anda.</p>
                 </div>
-                <div class="card feature-box glass scroll-anim delay-3">
+                <div class="card feature-box">
                     <div class="icon-circle icon-green"><i class="fas fa-clock"></i></div>
                     <h4>On Time</h4>
                     <p>Tepati masa kuliah.</p>
                 </div>
             </div>
 
-            <div id="pricing" class="card pricing-card glass scroll-anim">
+            <div id="pricing" class="card pricing-card fade-in delay-2">
                 <div class="card-header">
                     <h3>Anggaran Tambang</h3>
-                    <p>Kadar mesra pelajar mengikut kawasan.</p>
+                    <p>Harga bergantung pada jarak & masa.</p>
                 </div>
                 <ul class="price-list">
                     <li>
-                        <div class="p-icon"><i class="fas fa-university"></i></div>
-                        <span>Dalam Kampus (KSAS/KSAJS)</span>
+                        <span><i class="fas fa-university"></i> Dalam Kampus (KSAS/KSAJS)</span>
                         <strong>RM 3 - 5</strong>
                     </li>
                     <li>
-                        <div class="p-icon"><i class="fas fa-train"></i></div>
-                        <span>KTM Tanjong Malim</span>
+                        <span><i class="fas fa-train"></i> KTM Tanjong Malim</span>
                         <strong>RM 5 / 6 / 10</strong>
                     </li>
                     <li>
-                        <div class="p-icon"><i class="fas fa-store"></i></div>
-                        <span>Taman U / Speedmart</span>
+                        <span><i class="fas fa-store"></i> Taman U / Speedmart</span>
                         <strong>RM 5 / 6 / 10</strong>
                     </li>
                 </ul>
-                <div class="alert-box">
-                    <i class="fas fa-info-circle"></i> Auto-Booking khas untuk pengguna Android.
-                </div>
+                <p style="font-size: 12px; color: #ef4444; margin-top: 15px; font-weight: 600;">
+                    *Nota: Auto-Booking hanya untuk pengguna Android. Pengguna iOS perlu PM manual.
+                </p>
             </div>
 
         </section>
 
         <aside class="booking-column" id="booking">
-            <div class="card booking-card glass sticky-card">
+            <div class="card booking-card">
                 <div class="booking-header">
                     <h2>Tempah Ride</h2>
-                    <div class="status-dot online">
-                        <span class="ping"></span>
-                        Online
-                    </div>
+                    <div class="status-dot online">Online</div>
                 </div>
 
                 <form id="bookingForm">
@@ -187,14 +175,9 @@
                     </div>
 
                     <button type="submit" class="btn btn-full btn-primary btn-shadow">
-                        <span class="btn-text">Hantar ke WhatsApp</span>
-                        <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+                        Hantar ke WhatsApp <i class="fab fa-whatsapp"></i>
                     </button>
-                    
-                    <div class="os-detect">
-                        <span class="android-active"><i class="fab fa-android"></i> Android: Auto</span>
-                        <span class="ios-active"><i class="fab fa-apple"></i> iOS: Manual</span>
-                    </div>
+                    <p class="secure-note"><i class="fab fa-android text-green"></i> Website support Android User Sahaja</p>
                 </form>
 
                 <div class="driver-profile">
@@ -210,18 +193,21 @@
 
     </main>
 
-    <footer class="glass">
-        <p>&copy; 2025 Prebet Daniel System. <br>Designed for UPSI Students.</p>
+    <footer>
+        <p>&copy; 2025 Prebet Daniel System. <br>Safe Ride for UPSI Students.</p>
     </footer>
 
-    <div id="ios-modal" class="modal glass-modal">
+    <div id="ios-modal" class="modal">
         <div class="modal-content">
             <div class="icon-warning"><i class="fab fa-apple"></i></div>
-            <h3>Pengguna iOS</h3>
-            <p>Sistem sekuriti Apple menghalang auto-link. Sila tekan butang di bawah untuk chat manual.</p>
+            <h3>Maaf, Pengguna iOS.</h3>
+            <p>Sistem automasi web ini hanya disokong untuk pengguna Android sahaja.</p>
+            <p style="font-size: 13px; color: #64748b; margin-top: 10px;">
+                Bagi pengguna iPhone/iPad, sila tekan butang di bawah untuk <strong>PM detail secara manual</strong> kepada Daniel.
+            </p>
             
             <a href="https://wa.me/60189490784" class="btn btn-full btn-primary" style="margin-top: 20px;">
-                Chat Manual (WhatsApp)
+                Chat Manual (018-9490784)
             </a>
             <button class="btn-text" onclick="closeModal()">Tutup</button>
         </div>
