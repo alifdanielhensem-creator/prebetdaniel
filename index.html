@@ -53,7 +53,7 @@
             <li><a href="#booking">Tempah Sekarang</a></li>
         </ul>
         <div class="menu-footer">
-            <p>Prebet Daniel System v2.0</p>
+            <p>Prebet Daniel System v2.1</p>
         </div>
     </div>
 
@@ -103,22 +103,25 @@
             <div id="pricing" class="card pricing-card fade-in delay-2">
                 <div class="card-header">
                     <h3>Anggaran Tambang</h3>
-                    <p>Bayar tunai atau QR Pay.</p>
+                    <p>Harga bergantung pada jarak & masa.</p>
                 </div>
                 <ul class="price-list">
                     <li>
                         <span><i class="fas fa-university"></i> Dalam Kampus (KSAS/KSAJS)</span>
-                        <strong>RM 5</strong>
+                        <strong>RM 3 - 5</strong>
                     </li>
                     <li>
                         <span><i class="fas fa-train"></i> KTM Tanjong Malim</span>
-                        <strong>RM 5/6/10</strong>
+                        <strong>RM 5 / 6 / 10</strong>
                     </li>
                     <li>
                         <span><i class="fas fa-store"></i> Taman U / Speedmart</span>
-                        <strong>RM 5/6/10</strong>
+                        <strong>RM 5 / 6 / 10</strong>
                     </li>
                 </ul>
+                <p style="font-size: 12px; color: #ef4444; margin-top: 15px; font-weight: 600;">
+                    *Nota: Auto-Booking hanya untuk pengguna Android. Pengguna iOS perlu PM manual.
+                </p>
             </div>
 
         </section>
@@ -174,7 +177,7 @@
                     <button type="submit" class="btn btn-full btn-primary btn-shadow">
                         Hantar ke WhatsApp <i class="fab fa-whatsapp"></i>
                     </button>
-                    <p class="secure-note"><i class="fas fa-lock"></i> Data dihantar terus ke WhatsApp Daniel</p>
+                    <p class="secure-note"><i class="fab fa-android text-green"></i> Website support Android User Sahaja</p>
                 </form>
 
                 <div class="driver-profile">
@@ -193,6 +196,22 @@
     <footer>
         <p>&copy; 2025 Prebet Daniel System. <br>Safe Ride for UPSI Students.</p>
     </footer>
+
+    <div id="ios-modal" class="modal">
+        <div class="modal-content">
+            <div class="icon-warning"><i class="fab fa-apple"></i></div>
+            <h3>Maaf, Pengguna iOS.</h3>
+            <p>Sistem automasi web ini hanya disokong untuk pengguna Android sahaja.</p>
+            <p style="font-size: 13px; color: #64748b; margin-top: 10px;">
+                Bagi pengguna iPhone/iPad, sila tekan butang di bawah untuk <strong>PM detail secara manual</strong> kepada Daniel.
+            </p>
+            
+            <a href="https://wa.me/60189490784" class="btn btn-full btn-primary" style="margin-top: 20px;">
+                Chat Manual (018-9490784)
+            </a>
+            <button class="btn-text" onclick="closeModal()">Tutup</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
