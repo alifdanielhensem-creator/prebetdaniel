@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prebet Daniel | UPSI E-Hailing</title>
+    <title>Prebet Daniel | UPSI Student Ride</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,7 +21,7 @@
     <nav class="navbar">
         <div class="container nav-wrapper">
             <a href="#" class="brand-logo">
-                <div class="logo-box"><i class="fas fa-car-alt"></i></div>
+                <div class="logo-box"><i class="fas fa-car-side"></i></div>
                 <span>Prebet Daniel</span>
             </a>
             
@@ -32,7 +32,7 @@
             </ul>
 
             <div class="nav-right">
-                <a href="#booking" class="btn btn-sm btn-primary">Tempah Sekarang</a>
+                <a href="#booking" class="btn btn-sm btn-primary">Tempah</a>
                 <button class="mobile-toggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -52,6 +52,9 @@
             <li><a href="#pricing">Senarai Harga</a></li>
             <li><a href="#booking">Tempah Sekarang</a></li>
         </ul>
+        <div class="menu-footer">
+            <p>Prebet Daniel System v2.0</p>
+        </div>
     </div>
 
     <main class="container main-grid" id="home">
@@ -59,13 +62,13 @@
         <section class="content-column">
             
             <div class="card hero-card fade-in">
-                <div class="badge">Edisi Pelajar UPSI</div>
+                <div class="badge"><i class="fas fa-check-circle"></i> Edisi Pelajar UPSI</div>
                 <h1>Ride Selesa, <br><span class="text-highlight">Harga Siswa.</span></h1>
-                <p class="subtitle">Servis pengangkutan peribadi (Prebet) yang dipercayai di Tanjong Malim. Selamat, pantas, dan berhawa dingin.</p>
+                <p class="subtitle">Servis pengangkutan peribadi yang dipercayai di Tanjong Malim. Selamat, pantas, dan berhawa dingin.</p>
                 
                 <div class="stats-row">
                     <div class="stat">
-                        <strong>4.9/5.0</strong>
+                        <strong>4.9 <i class="fas fa-star text-yellow"></i></strong>
                         <span>Rating</span>
                     </div>
                     <div class="stat">
@@ -74,24 +77,24 @@
                     </div>
                     <div class="stat">
                         <strong>PMV 1214</strong>
-                        <span>Plat</span>
+                        <span>Bezza Putih</span>
                     </div>
                 </div>
             </div>
 
             <div id="features" class="features-row fade-in delay-1">
                 <div class="card feature-box">
-                    <i class="fas fa-wind icon-blue"></i>
+                    <div class="icon-circle icon-blue"><i class="fas fa-snowflake"></i></div>
                     <h4>Aircond Sejuk</h4>
                     <p>Keselesaan optimum.</p>
                 </div>
                 <div class="card feature-box">
-                    <i class="fas fa-music icon-purple"></i>
+                    <div class="icon-circle icon-purple"><i class="fab fa-spotify"></i></div>
                     <h4>Spotify On</h4>
                     <p>Request lagu anda.</p>
                 </div>
                 <div class="card feature-box">
-                    <i class="fas fa-clock icon-green"></i>
+                    <div class="icon-circle icon-green"><i class="fas fa-clock"></i></div>
                     <h4>On Time</h4>
                     <p>Tepati masa kuliah.</p>
                 </div>
@@ -104,7 +107,7 @@
                 </div>
                 <ul class="price-list">
                     <li>
-                        <span><i class="fas fa-map-pin"></i> Dalam Kampus (KSAS/KSAJS)</span>
+                        <span><i class="fas fa-university"></i> Dalam Kampus (KSAS/KSAJS)</span>
                         <strong>RM 3 - 5</strong>
                     </li>
                     <li>
@@ -112,7 +115,7 @@
                         <strong>RM 6</strong>
                     </li>
                     <li>
-                        <span><i class="fas fa-city"></i> Taman U / Pekan</span>
+                        <span><i class="fas fa-store"></i> Taman U / Speedmart</span>
                         <strong>RM 7</strong>
                     </li>
                 </ul>
@@ -131,7 +134,7 @@
                     <div class="form-group">
                         <label>Lokasi Ambil</label>
                         <div class="input-wrapper">
-                            <i class="fas fa-location-crosshairs"></i>
+                            <i class="fas fa-map-marker-alt"></i>
                             <input type="text" id="pickup" placeholder="Cth: Blok B, KTDI" required>
                         </div>
                     </div>
@@ -139,7 +142,7 @@
                     <div class="form-group">
                         <label>Destinasi</label>
                         <div class="input-wrapper">
-                            <i class="fas fa-flag-checkered"></i>
+                            <i class="fas fa-location-arrow"></i>
                             <select id="destination" required>
                                 <option value="" disabled selected>Pilih lokasi...</option>
                                 <option value="Kampus Proton (KSAS)">Kampus Proton (KSAS)</option>
@@ -171,6 +174,7 @@
                     <button type="submit" class="btn btn-full btn-primary btn-shadow">
                         Hantar ke WhatsApp <i class="fab fa-whatsapp"></i>
                     </button>
+                    <p class="secure-note"><i class="fas fa-lock"></i> Data dihantar terus ke WhatsApp Daniel</p>
                 </form>
 
                 <div class="driver-profile">
@@ -187,7 +191,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Prebet Daniel System. <br>Design for UPSI Students.</p>
+        <p>&copy; 2025 Prebet Daniel System. <br>Safe Ride for UPSI Students.</p>
     </footer>
 
     <script src="script.js"></script>
