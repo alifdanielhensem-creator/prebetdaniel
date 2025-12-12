@@ -26,58 +26,68 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', toggleMenu);
     });
 
-    // 3. IOS-FRIENDLY WHATSAPP LOGIC
+    // 3. FUNGSI PENGESAN IOS (IPHONE/IPAD)
+    function isIOS() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    // Modal Variables
+    const iosModal = document.getElementById('ios-modal');
+    window.closeModal = function() {
+        iosModal.classList.remove('active');
+    }
+
+    // 4. LOGIK TEMPAHAN
     const form = document.getElementById('bookingForm');
     
     if(form) {
         const submitBtn = form.querySelector('button[type="submit"]');
 
         form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Halang refresh page
+            e.preventDefault();
 
-            // A. Ambil Data
+            // A. CEK JIKA PENGGUNA ADALAH IOS
+            if (isIOS()) {
+                // Jika iPhone, JANGAN auto redirect. Tunjuk Modal Warning/Sorry
+                iosModal.classList.add('active');
+                return; // Berhenti di sini
+            }
+
+            // B. JIKA ANDROID / PC - TERUSKAN AUTO BOOKING
             const pickup = document.getElementById('pickup').value;
             const destination = document.getElementById('destination').value;
             const time = document.getElementById('time').value;
             const pax = document.getElementById('pax').value;
 
-            // B. Ubah Button Text (Feedback)
+            // Ubah Button Text
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Buka WhatsApp...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
             submitBtn.style.opacity = '0.8';
 
-            // C. Susun Link WhatsApp
-            const phoneNumber = '60189490784'; 
-            
-            // Format Mesej Kemas
-            const message = `Salam Daniel, saya nak book ride:
+            setTimeout(() => {
+                const phoneNumber = '60189490784'; 
+                const message = `Salam Daniel, saya pengguna Android nak book ride:
 
-📍 *Pickup:* ${pickup}
+📍 *Lokasi Ambil:* ${pickup}
 🏁 *Destinasi:* ${destination}
 🕒 *Masa:* ${time}
 👥 *Pax:* ${pax}
 
 Available tak?`;
 
-            // Encode & Bina URL
-            const encodedMessage = encodeURIComponent(message);
-            const waUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                const encodedMessage = encodeURIComponent(message);
+                const waUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-            // D. [CRITICAL IOS FIX]
-            // Gunakan window.location.href (Direct Redirect)
-            // Jangan guna window.open dalam setTimeout
-            window.location.href = waUrl;
+                window.open(waUrl, '_blank');
 
-            // E. Reset Form (Hanya selepas redirect berlaku)
-            setTimeout(() => {
                 submitBtn.innerHTML = originalText;
                 submitBtn.style.opacity = '1';
                 form.reset();
-            }, 3000); // Reset selepas 3 saat
+            }, 1000);
         });
     }
 
-    // 4. Smooth Scroll & Navbar Active State
+    // 5. Smooth Scroll
     const sections = document.querySelectorAll('section, aside, div[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -85,7 +95,6 @@ Available tak?`;
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            // Adjustment for offset
             if (scrollY >= (sectionTop - 200)) {
                 current = section.getAttribute('id');
             }
