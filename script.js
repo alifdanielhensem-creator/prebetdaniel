@@ -18,65 +18,66 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.toggle('active');
     }
 
-    mobileBtn.addEventListener('click', toggleMenu);
-    closeBtn.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
+    if(mobileBtn) mobileBtn.addEventListener('click', toggleMenu);
+    if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
+    if(overlay) overlay.addEventListener('click', toggleMenu);
     
-    // Tutup menu bila link ditekan
     mobileLinks.forEach(link => {
         link.addEventListener('click', toggleMenu);
     });
 
-    // 3. WHATSAPP BOOKING LOGIC (UPDATE TERBARU)
+    // 3. IOS-FRIENDLY WHATSAPP LOGIC
     const form = document.getElementById('bookingForm');
-    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    if(form) {
+        const submitBtn = form.querySelector('button[type="submit"]');
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); // Halang form dari refresh page
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Halang refresh page
 
-        // A. Ambil Data dari Input
-        const pickup = document.getElementById('pickup').value;
-        const destination = document.getElementById('destination').value;
-        const time = document.getElementById('time').value;
-        const pax = document.getElementById('pax').value;
+            // A. Ambil Data
+            const pickup = document.getElementById('pickup').value;
+            const destination = document.getElementById('destination').value;
+            const time = document.getElementById('time').value;
+            const pax = document.getElementById('pax').value;
 
-        // B. Ubah butang jadi loading
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
-        submitBtn.style.opacity = '0.7';
+            // B. Ubah Button Text (Feedback)
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Buka WhatsApp...';
+            submitBtn.style.opacity = '0.8';
 
-        // C. Proses Data
-        setTimeout(() => {
-            
-            // Nombor Driver
+            // C. Susun Link WhatsApp
             const phoneNumber = '60189490784'; 
-
-            // Susun Ayat Mesej
+            
+            // Format Mesej Kemas
             const message = `Salam Daniel, saya nak book ride:
 
-📍 *Lokasi Ambil:* ${pickup}
+📍 *Pickup:* ${pickup}
 🏁 *Destinasi:* ${destination}
 🕒 *Masa:* ${time}
 👥 *Pax:* ${pax}
 
 Available tak?`;
 
-            // Encode untuk URL
+            // Encode & Bina URL
             const encodedMessage = encodeURIComponent(message);
             const waUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-            // Buka WhatsApp
-            window.open(waUrl, '_blank');
+            // D. [CRITICAL IOS FIX]
+            // Gunakan window.location.href (Direct Redirect)
+            // Jangan guna window.open dalam setTimeout
+            window.location.href = waUrl;
 
-            // Reset Form & Butang
-            submitBtn.innerHTML = originalText;
-            submitBtn.style.opacity = '1';
-            form.reset();
+            // E. Reset Form (Hanya selepas redirect berlaku)
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.opacity = '1';
+                form.reset();
+            }, 3000); // Reset selepas 3 saat
+        });
+    }
 
-        }, 1000); // Delay 1 saat untuk effect 'loading'
-    });
-
-    // 4. Smooth Scroll & Active Navbar State
+    // 4. Smooth Scroll & Navbar Active State
     const sections = document.querySelectorAll('section, aside, div[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -84,7 +85,7 @@ Available tak?`;
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+            // Adjustment for offset
             if (scrollY >= (sectionTop - 200)) {
                 current = section.getAttribute('id');
             }
